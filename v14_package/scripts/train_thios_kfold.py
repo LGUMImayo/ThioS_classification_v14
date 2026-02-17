@@ -16,8 +16,7 @@ Classes:
 Usage:
     python train_thios_kfold.py --config_file <path> --n_folds 5 --gpus 1
 
-Author: ThioS Classification Pipeline
-Date: January 2026
+
 """
 
 import os
