@@ -13,9 +13,6 @@ Features:
 
 Usage:
     python prepare_thios_patches.py --config_file <path_to_config.json>
-
-Author: ThioS Classification Pipeline
-Date: January 2026
 """
 
 import os
