@@ -15,8 +15,6 @@ Key features for low-data training:
 3. Class-weighted Focal + Tversky loss
 4. Spatial weight maps for boundary emphasis
 
-Author: ThioS Classification Pipeline
-Date: January 2026
 """
 
 import os
