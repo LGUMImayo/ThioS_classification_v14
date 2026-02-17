@@ -16,7 +16,9 @@ segmentation (pixel-wise classification):
 V14 goal: produce tighter, more conservative boundaries while using corrected
 labels.
 
-Workflow:
+---
+
+## Workflow:
 
 Input (128×128×3)
     ↓
