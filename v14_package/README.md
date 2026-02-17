@@ -21,17 +21,17 @@ labels.
 ## Workflow:
 
 ```
-Input (128×128×3)
-    ↓
-EfficientNet-B4 Encoder (pretrained, extracts features at multiple scales)
-    ↓
-UNet Decoder (upsamples back to full resolution)
-    ↓
-Segmentation Head (1×1 conv → 128×128×5)
-    ↓
-Softmax → per-pixel probabilities for 5 classes
-    ↓
-Argmax → per-pixel predicted class (bg/unlabeled/diffuse/plaque/tangle)
+├──Input (128×128×3)
+│    ↓
+├──EfficientNet-B4 Encoder (pretrained, extracts features at multiple scales)
+│    ↓
+├──UNet Decoder (upsamples back to full resolution)
+│    ↓
+├──Segmentation Head (1×1 conv → 128×128×5)
+│    ↓
+├──Softmax → per-pixel probabilities for 5 classes
+│    ↓
+├──Argmax → per-pixel predicted class (bg/unlabeled/diffuse/plaque/tangle)
 ```
 ---
 
