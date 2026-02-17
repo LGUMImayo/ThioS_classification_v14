@@ -1,0 +1,51 @@
+{
+    "model_params": {
+        "num_classes": 5,
+        "input_channels": 3,
+        "pred_patch_size": [128, 128],
+        "batch_size": 64,
+        "lr": 0.00005,
+        "num_workers": 6,
+        "background_index": 1,
+        "spatial_dims": 2,
+        "log_dir": "/fslustre/qhs/ext_chen_yuheng_mayo_edu/ThioS_classification/logs/efficientnet_b4_v14_kfold",
+        "encoder_name": "efficientnet-b4",
+        "pretrained": true,
+        "contrast_enhance": false,
+        "early_stopping_patience": 50,
+        "dropout": 0.3,
+        "weight_decay": 0.01,
+        "label_smoothing": 0.0,
+
+        "tversky_params": {
+            "1": {"alpha": 0.7,  "beta": 0.3,  "weight": 1.0},
+            "2": {"alpha": 0.7,  "beta": 0.3,  "weight": 1.2},
+            "3": {"alpha": 0.7,  "beta": 0.3,  "weight": 1.0},
+            "4": {"alpha": 0.7,  "beta": 0.3,  "weight": 1.5}
+        },
+        "focal_weight": 0.0,
+        "tversky_weight": 1.0,
+        "boundary_loss_weight": 0.0,
+
+        "confidence_threshold": 0.5
+    },
+    "dataset_params": {
+        "image_dir": "/fslustre/qhs/ext_chen_yuheng_mayo_edu/ThioS_classification/patches_v11/images",
+        "label_dir": "/fslustre/qhs/ext_chen_yuheng_mayo_edu/ThioS_classification/patches_v11/labels",
+        "weight_dir": "/fslustre/qhs/ext_chen_yuheng_mayo_edu/ThioS_classification/patches_v11/weights",
+        "patch_size": [128, 128],
+        "num_classes": 5,
+        "boundary_weight_boost": 0.0,
+        "boundary_width": 0,
+        "oversample_factors": {"4": 1, "2": 1, "3": 1}
+    },
+    "training_params": {
+        "nb_epochs": 500,
+        "accelerator": "gpu",
+        "devices": 1,
+        "strategy": "auto",
+        "precision": "16-mixed"
+    },
+    "version": "v14",
+    "notes": "V14: Tight boundaries with corrected labels. Key changes from V13: (1) Higher FP penalty via Tversky alpha=0.7/beta=0.3 — penalizes false positives 2.3x more than false negatives, discouraging boundary over-expansion; (2) Equal class weights (all 1.0) — removes incentive to aggressively predict rare classes; (3) No oversampling at all — model sees natural class distribution; (4) Tversky-only loss (no focal) — matches V5's loss setup, avoids focal loss pushing hard boundary pixels toward foreground; (5) Confidence thresholding at 0.5 — foreground class only assigned if softmax > 0.5, otherwise background. Uses same V11 corrected labels. Goal: achieve V5-like tight boundaries while using Erica's corrected annotations."
+}

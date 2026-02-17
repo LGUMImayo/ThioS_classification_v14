@@ -1,0 +1,11 @@
+{
+    "images_path": "/fslustre/qhs/ext_chen_yuheng_mayo_edu/ThioS_classification/processed_data_v11/images",
+    "labels_path": "/fslustre/qhs/ext_chen_yuheng_mayo_edu/ThioS_classification/processed_data_v11/labels",
+    "save_path": "/fslustre/qhs/ext_chen_yuheng_mayo_edu/ThioS_classification/patches_v11",
+    "patch_size": [128, 128],
+    "step_size": [64, 64],
+    "min_biomarker_ratio": 0.001,
+    "balance_classes": true,
+    "include_pure_background": true,
+    "max_pure_background_per_image": 50
+}
