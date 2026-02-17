@@ -10,9 +10,6 @@ This script:
 
 Usage:
     python analyze_kfold_results.py --log_dir logs/efficientnet_b4_v10_kfold --n_folds 5
-
-Author: ThioS Classification Pipeline
-Date: January 2026
 """
 
 import os
