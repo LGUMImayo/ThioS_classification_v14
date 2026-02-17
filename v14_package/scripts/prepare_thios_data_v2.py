@@ -21,8 +21,7 @@ Usage:
     python prepare_thios_data_v2.py --input_czi_dir <path> --input_label_dir <path> --output_dir <path> \
         --intensity_min 300 --intensity_max 2200
 
-Author: ThioS Classification Pipeline
-Date: January 2026
+
 """
 
 import os
