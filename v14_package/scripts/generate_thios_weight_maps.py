@@ -11,8 +11,6 @@ Weight maps emphasize:
 Usage:
     python generate_thios_weight_maps.py --data_dir <path> --class_weights <json>
 
-Author: ThioS Classification Pipeline
-Date: January 2026
 """
 
 import os
